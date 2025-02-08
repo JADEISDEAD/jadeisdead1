@@ -135,9 +135,9 @@
       const visitorInfo = {
         content:  New Visitor!
  IP: ${data.ip}
- Location: ${data.city}, ${data.region}, ${data.country_name}
- Browser: ${navigator.userAgent}
- Time: ${new Date().toLocaleString()}};
+Location: ${data.city}, ${data.region}, ${data.country_name}
+Browser: ${navigator.userAgent}
+Time: ${new Date().toLocaleString()}};
 
       fetch(webhookURL, {
         method: "POST",
