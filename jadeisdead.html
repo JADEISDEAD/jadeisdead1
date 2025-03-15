@@ -1,133 +1,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JADEISDEAD.EXE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JADEISDEAD.EXE</title>
 
-<style>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
 
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+    /* Ensure the video is properly positioned */
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
+      z-index: -1; /* Put the video behind the content */
+    }
 
-  .video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    z-index: -1;
-  }
+    /* Apply a z-index to buttons so they appear in front of the video */
+    .play-button, .payment-button, .otherwebsite-button, .enc-button, .b64-button, .es-button {
+      position: absolute;
+      z-index: 1;  /* Make sure buttons are above the video */
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
 
-  .play-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
+    .payment-button {
+      top: 300px;
+      left: calc(50% + 100px);
+    }
 
-  .payment-button {
-    position: absolute; 
-    top: 300px; 
-    left: calc(50% + 400px); /* Change 50px to any value to move the button right or left */
-    transform: translateX(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-.otherwebsite-button {
-  position: absolute; 
-  top: 300px; 
-  left: calc(50% + -50px); /* Change 50px to any value to move the button right or left */
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-  .enc-button {
-    position: absolute; 
-    top: 500px; 
-    left: 50%; 
-    transform: translateX(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  .b64-button {
-    position: absolute; 
-    top: 600px; 
-    left: 50%; 
-    transform: translateX(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-  }  
-  .es-button {
-    position: absolute; 
-    top: 700px; 
-    left: 50%; 
-    transform: translateX(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  .title-container {
-    text-align: center;
-    position: absolute;
-    top: 0; 
-    left: 50%;
-    transform: translateX(-50%);
-  }
+    .otherwebsite-button {
+      top: 300px;
+      right: calc(50% + 100px);
+    }
 
-  .marquee-container {
-    position: absolute;
-    top: 80px; 
-    width: 100%;
-    text-align: center;
-  }
-</style>
+    .enc-button {
+      top: 400px;
+      right: calc(50% + 100px);
+    }
+
+    .b64-button {
+      top: 400px;
+      left: calc(50% + 100px);
+    }
+
+    .es-button {
+      top: 500px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .title-container {
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .marquee-container {
+      position: absolute;
+      top: 80px;
+      width: 100%;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
 
+  <!-- Video Background -->
   <video autoplay loop muted class="video-background">
     <source src="https://raw.githubusercontent.com/JADEISDEAD/JADEISDEAD/refs/heads/main/sadboi.mp4" type="video/mp4">
+    Your browser does not support the video tag.
   </video>
 
+  <!-- Title -->
   <div class="title-container">
     <img src="https://raw.githubusercontent.com/JADEISDEAD/JADEISDEAD/refs/heads/main/JADEISDEAD.png" alt="jadeisdead">
   </div>
 
+  <!-- Marquee Text -->
   <div class="marquee-container">
     <marquee>
       <h1 style="color:#FFD700; font-size: 72px;">all of my haters be all in my mentions </h1>
     </marquee>
   </div>
 
+  <!-- Play Button -->
   <button class="play-button" onclick="playSong()">
     <img src="https://raw.githubusercontent.com/JADEISDEAD/JADEISDEAD/refs/heads/main/buttonplaypause.png" alt="Play" width="100">
   </button>
-    <button class="payment-button" onclick="window.location.href='https://commerce.coinbase.com/checkout/c2576d7e-0fe8-411c-a685-3bd53da58ded';">
+
+  <!-- Other Buttons -->
+  <button class="payment-button" onclick="window.location.href='https://commerce.coinbase.com/checkout/c2576d7e-0fe8-411c-a685-3bd53da58ded';">
     <img src="https://i.gifer.com/Fw3P.gif" alt="Go to payment" width="100">
   </button>
 
   <button class="otherwebsite-button" onclick="window.location.href='https://jadeisdead.github.io/rr/rr.html';">
     <img src="https://media.tenor.com/rMgsb4vOHM4AAAAi/gun-real.gif" alt="Go to rr" width="100">
   </button>
+
   <button class="enc-button" onclick="window.location.href='https://jadeisdead.github.io/encryption/se.html';">
-    <img src="https:https://media.tenor.com/L_IUBUHLO7cAAAAi/cybersecurity-art-mule-yong.gif" alt="Go to enc" width="100">
+    <img src="https://cdn-icons-png.flaticon.com/512/3470/3470474.png" alt="Go to enc" width="100">
   </button>
-   <button class="b64-button" onclick="window.location.href='https://jadeisdead.github.io/64b/base%2064%20encoder%20decoder.html';">
+
+  <button class="b64-button" onclick="window.location.href='https://jadeisdead.github.io/64b/base%2064%20encoder%20decoder.html';">
     <img src="https://media.tenor.com/-fpoDL2Bw70AAAAi/symbol-code.gif" alt="Go to b64" width="100">
   </button>
-    <button class="es-button" onclick="window.location.href='https://jadeisdead.github.io/eas/etchasketch.html';">
+
+  <button class="es-button" onclick="window.location.href='https://jadeisdead.github.io/eas/etchasketch.html';">
     <img src="https://media.tenor.com/FfyZDAY4eNYAAAAi/doodxrpl-doodxrp.gif" alt="Go to b64" width="100">
   </button>
-  
 
+  <!-- Audio Element -->
   <audio id="myAudio" src="https://raw.githubusercontent.com/JADEISDEAD/JADEISDEAD/refs/heads/main/theme2.mp3" loop></audio>
+
   <script>
     function playSong() {
       var audio = document.getElementById("myAudio");
